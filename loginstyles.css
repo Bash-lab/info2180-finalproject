@@ -1,0 +1,80 @@
+header {
+    display: flex;
+    text-align: top;
+    color: white;
+    background-color: rgb(8, 1, 40);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+h1{
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+h2{
+    text-align: center;
+    color: black;
+    margin: 20px;
+}
+
+main{
+    text-align: center;
+    color: black;
+    margin-top: 200px;
+    margin-bottom: 100px;
+
+}
+
+footer {
+    text-align: center;
+    color: black;
+    background-color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+button {
+    background-color: rgb(86, 15, 193);
+    color: white;
+    border: 20px none rgb(86, 15, 193);
+    height: 40px;
+    width: 410px;
+    border-radius: 10px;
+    padding: 2px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+
+#dolphinlogo {
+    margin-left: 2px;
+    height: 50px;
+    width: 50px;
+    top: 10px;
+    left: 10px;
+}
+
+#email, #password {
+    height: 30px;
+    width: 400px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#lock-icon {
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    min-width: 40px;
+    position: absolute;
+}
