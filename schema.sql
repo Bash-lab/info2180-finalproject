@@ -1,9 +1,9 @@
---create the database
+-- create the database
 DROP DATABASE IF EXISTS dolphin_crm;
 CREATE DATABASE dolphin_crm;
 USE dolphin_crm;
 
---insert tables and fields
+-- insert tables and fields
 CREATE TABLE Users(
     id INT AUTO_INCREMENT NOT NULL,
     firstname VARCHAR(25),
