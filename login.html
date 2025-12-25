@@ -14,13 +14,14 @@
     
     <main>
         <h2><strong>Login</strong></h2>
-        <form action="dashboard.html" method="post">
-            <input type="text" id="email" placeholder="Email address" required><br><br>
-            <input type="password" id="password" placeholder="Password" required><br><br>
+        <form id="login-form" onsubmit="handleLogin(event)">
+            <input type="email" id="email" name="email" placeholder="Email address" required><br><br>
+            <input type="password" id="password" name="password" placeholder="Password" required><br><br>
             <div>
-                <img src="/images/lock-icon1.png" alt="icon of a lock" id="lock-icon">
+                <img src="images/lock-icon1.png" alt="icon of a lock" id="lock-icon">
                 <button type="submit">Login</button>
             </div>
+            <p id="error-message" style="color: red; margin-top: 15px; font-weight: bold;"></p>
         </form>
     </main>
     
@@ -30,5 +31,31 @@
         <p>Copyright &copy; 2022 Dolphin CRM</p>
     </footer>
 
+    <script>
+    function handleLogin(event) {
+        event.preventDefault();
+        
+        const form = document.getElementById('login-form');
+        const formData = new FormData(form);
+        const errorArea = document.getElementById('error-message');
+
+        fetch('api/login.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            if (data.trim() === 'success') {
+                window.location.href = 'dolphin.php'; // Redirect to dashboard
+            } else {
+                errorArea.innerText = "Invalid Email or Password";
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            errorArea.innerText = "An error occurred. Please try again.";
+        });
+    }
+    </script>
 </body>
 </html>
