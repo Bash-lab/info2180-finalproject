@@ -38,6 +38,10 @@ $fullname = $contact['title'] . ' ' . $contact['firstname'] . ' ' . $contact['la
 $assigned_to = $contact['assigned_firstname'] . ' ' . $contact['assigned_lastname'];
 $created_by = $contact['creator_firstname'] . ' ' . $contact['creator_lastname'];
 
+// Format dates
+$created_date = date('F j, Y', strtotime($contact['created_at']));
+$updated_date = date('F j, Y', strtotime($contact['updated_at']));
+
 // Determine badge color based on type
 $badge_class = ($contact['type'] == 'Sales Lead') ? 'badge-sales' : 'badge-support';
 
@@ -45,7 +49,8 @@ echo "<div class='contact-details'>
         <div class='contact-header'>
             <div>
                 <h2>{$fullname}</h2>
-                <p class='contact-meta'>Created on " . date('F j, Y', strtotime($contact['created_at'])) . " by {$created_by}</p>
+                <p class='contact-meta'>Created on {$created_date} by {$created_by}</p>
+                <p class='contact-meta'>Updated on {$updated_date}</p>
             </div>
             <span class='badge {$badge_class}'>{$contact['type']}</span>
         </div>
