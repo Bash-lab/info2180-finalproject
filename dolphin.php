@@ -2,7 +2,7 @@
 session_start();
 // Redirect to login if not logged in [cite: 25-26]
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.html");
+    header("Location: index.html");
     exit;
 }
 ?>
